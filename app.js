@@ -9,6 +9,9 @@ const {
   limiter,
 } = require("./lib/middlewares");
 
+const MainRouter = require("./api/routes/MainRouter");
+const UserRouter = require("./api/routes/UserRouter");
+
 module.exports = () => {
   const app = express();
 
@@ -19,6 +22,10 @@ module.exports = () => {
   app.use(limiter());
   app.use(compression());
   app.use(logger());
+
+  // routers
+  app.use(MainRouter());
+  app.use(UserRouter());
 
   return app
 }
