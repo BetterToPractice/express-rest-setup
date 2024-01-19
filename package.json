@@ -4,11 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "migrate:generate": "typeorm migration:create -o",
+    "migrate:run": "typeorm migration:run -d ./lib/database/database.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Agung Yuliyanto <agung.96tm@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -18,6 +20,8 @@
     "helmet": "^7.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.19",
     "walk-sync": "^3.0.0"
   }
 }

@@ -7,3 +7,6 @@ Express Rest Setup
 npm install
 npm run dev
 ```
+
+
+typeorm migration:create ./migrations/create_user_table --outputJs 

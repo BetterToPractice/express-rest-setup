@@ -1,6 +1,13 @@
-const app = require("./app")()
-const Config = require("./lib/config")
+const { initApp, initDb } = require("./app");
+const Config = require("./lib/config");
 
-app.listen(Config.get("app.port"), () => {
-  console.log("Server running at port " + Config.get("app.port"))
-})
+async function startServer() {
+  await initDb();
+  const app = initApp();
+
+  app.listen(Config.get("app.port"), () => {
+    console.log("Server running at port " + Config.get("app.port"));
+  });
+}
+
+startServer();

@@ -143,4 +143,7 @@ dist
 
 .idea/
 
+# ignore database
+*.sqlite
+
 # End of https://www.toptal.com/developers/gitignore/api/node
